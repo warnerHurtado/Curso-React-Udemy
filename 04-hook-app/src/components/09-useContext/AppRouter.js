@@ -25,7 +25,18 @@ export const AppRouter = () => {
                             
                         </Switch>
                     </div>
+                    pepito
             </div>
         </Router>
     )
 }
+
+
+let pepito = 5;
+let test  = 0;
+ pepito = 5;
+ pepito = 5;
+ pepito = 5;
+let a = 2;
+
+    
