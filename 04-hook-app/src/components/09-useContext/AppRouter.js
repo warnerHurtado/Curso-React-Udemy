@@ -25,7 +25,6 @@ export const AppRouter = () => {
                             
                         </Switch>
                     </div>
-                    pepito
             </div>
         </Router>
     )
