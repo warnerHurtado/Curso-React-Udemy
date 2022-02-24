@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
+import { useNavigate } from 'react-router-dom';
+
 
 export const LoginScreen = () => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const { loading } = useSelector( state => state.ui );
     console.log(loading); 
@@ -26,6 +29,12 @@ export const LoginScreen = () => {
         console.log(email, password);
 
         dispatch( startLoginEmailPassword( email, password) ); //del auth action
+
+        const lastPath = localStorage.getItem('lastPath') || '/';
+
+        navigate(lastPath, {
+          replace: true
+        }); 
     }
 
     const handleGoogleLogin = () => {
